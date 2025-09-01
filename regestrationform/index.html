@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <form action="">
+        <h1>Student registration form</h1>
+        <div>
+            <label for="name">Student Name </label>
+            <input type="text" name="name" id="name" placeholder="First Name" required>
+            <input type="text" name="name" id="name" placeholder="Last Name" required>
+        </div>
+        <br>
+        <div>
+            <label for="email">Student Email </label>
+            <input type="email" name="email" id="email" required placeholder="Email">
+        </div>
+        <br>
+        <div>
+            <label for="phone">Phone Number  </label>
+            <input type="number" name="number" id="number" placeholder="### ### ####">
+        </div>
+        <br>
+        <div>
+            <label for="address">Student Adress</label>
+            <input type="address" name="Adress" id="Adress" placeholder="Street address">
+            <input type="text" name="city" id="city" placeholder="City">
+        </div>
+        <div>
+            <label for="region">Region  </label>
+            <br>
+            <select name="region" id="region">
+                <option value="Punjab">Punjab</option>
+            <option value="Sindh">sindh</option>
+            <option value="KPK">KPK</option>
+            <option value="Blochistan">Blochistan</option>
+            </select>    
+        </div>
+        <br>
+        <div>
+            <label for="date">Enter apply Date</label>
+            <br>
+            <input type="date" name="date" id="date">
+        </div>
+        <br>
+        <div>
+            <label for="degree">Select your Education</label>
+            <br>
+            <select name="degree" id="degree">
+                <option value="Matric">Matric</option>
+                <option value="Intermadiat">Intermadiat</option>
+                <option value="Graduation">Graduation</option>
+                <option value="Masters">Masters</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label for="degree">Upload Degree prototype</label>
+            <input type="file" name="degree" id="degree">
+        </div>
+        <br>
+        <div><label for="gender">Select your Gender</label>
+            <br>
+            <label for="Male">Male</label>
+            <input type="radio" name="gender" id="Male">
+            <label for="Female">Female</label>
+            <input type="radio" name="gender" id="Female">
+        </div>
+        <br>
+        <div>
+            <label for="image">Upload your Passport size image</label>
+           <input type="file" name="image" id="image">
+        </div>
+        <br>
+        <div>
+            <label for="proficiency">Select your proficiency</label>
+            <br>
+            <input type="checkbox" name="Frontend" id="frontend">
+            <label for="frontend">Frontend</label>
+            <br>
+             <input type="checkbox" name="Backend" id="Backend">
+            <label for="Backend">Backend</label>
+            <br>
+            <input type="checkbox" name="database" id="database">
+            <label for="database">Database</label>
+        </div>
+        <br>
+        <div>
+            <label for="color">Choose your favourite color</label>
+            <input type="color" name="color" id="color">
+        </div>
+        <br>  
+        <div>
+            <label for="english">Choose your english proficiency range</label>
+            <input type="range" name="english" id="english">
+        </div>
+        <br>
+        <div>
+            <label for="comment">Enter your Comment here</label>
+            <br>
+            <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Enter message....."></textarea>
+        </div>
+    </form>
+    <br>
+    <button type="submit">Submit</button>
+</body>
+</html>

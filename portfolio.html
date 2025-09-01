@@ -3,39 +3,587 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AliAfzal - Portfolio</title>
+    <title>Ali Afzal | Web Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Link for Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #081b29;
+    --second-bg-color: #112e42;
+    --text-color: #ededed;
+    --main-color: #00abf0;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    padding: 0 9%;
+    background: url('/images/home-bg.jpg') no-repeat center center/cover; /* Add your own image or remove this line */
+}
+
+.home-content {
+    max-width: 60rem;
+}
+
+.home-content h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 4rem;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: space-between;
+    width: 34.5rem;
+    height: 5rem;
+}
+
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 100%;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .8rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    color: var(--bg-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.btn-box a:hover {
+    color: var(--main-color);
+    background: transparent;
+}
+
+.home-sci {
+    position: absolute;
+    bottom: 4rem;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--main-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.home-sci a:hover {
+    color: var(--bg-color);
+    background: var(--main-color);
+}
+
+.heading {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--second-bg-color);
+    padding-bottom: 6rem;
+}
+
+.about-content {
+    text-align: center;
+}
+
+.about-content h3 {
+    font-size: 2.6rem;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+    max-width: 1000px;
+    text-align: left;
+}
+
+.skills {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.skill-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.skill {
+    background: var(--main-color);
+    color: var(--bg-color);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+.projects {
+    background: var(--bg-color);
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.project-box {
+    background: var(--second-bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+}
+
+.project-box:hover {
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+
+.project-info h4 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-info p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.tech-stack {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tech-stack span {
+    background: rgba(0, 171, 240, 0.2);
+    color: var(--main-color);
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.project-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.project-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: .8rem 1.5rem;
+    background: var(--main-color);
+    border-radius: 4px;
+    color: var(--bg-color);
+    font-weight: 600;
+    font-size: 1.4rem;
+    transition: .3s;
+}
+
+.project-links a:hover {
+    background: transparent;
+    color: var(--main-color);
+    outline: 1px solid var(--main-color);
+}
+
+.contact {
+    background: var(--second-bg-color);
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+
+.contact form .input-box input {
+    width: 49%;
+}
+
+.contact form textarea {
+    resize: none;
+}
+
+.contact form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
+    padding: 1.2rem 3rem;
+    font-size: 1.6rem;
+    background: var(--main-color);
+    color: var(--bg-color);
+    border-radius: .8rem;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.contact form .btn:hover {
+    background: transparent;
+    color: var(--main-color);
+    outline: 1px solid var(--main-color);
+}
+
+.contact-info {
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+}
+
+.footer-text p {
+    font-size: 1.4rem;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+
+.footer-iconTop a:hover {
+    background: transparent;
+    outline: 1px solid var(--main-color);
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--bg-color);
+}
+
+.footer-iconTop a:hover i {
+    color: var(--main-color);
+}
+
+/* BREAKPOINTS */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        gap: 5rem;
+    }
+    .home-content {
+        text-align: center;
+    }
+    .btn-box {
+        margin: 0 auto;
+    }
+    .contact form .input-box input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}
+    </style>
 </head>
 <body>
-    <h1>Ali Afzal</h1>
-    <hr>
-    <h2>About</h2>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus error dolores aperiam velit eligendi quas, mollitia sunt officiis at facilis numquam vel? Odit nulla aliquam labore nisi. Porro eveniet ex suscipit. Quasi, eos eum nulla necessitatibus enim delectus voluptatem excepturi, laboriosam temporibus officia iure. Ad modi tenetur odit minus minima molestias, consequuntur labore ea reprehenderit, quia sit quisquam impedit, quaerat velit inventore! Inventore cupiditate quasi fugiat asperiores laboriosam eum neque beatae ut quaerat odio esse nisi quas nemo, eaque iusto quam. Nostrum quaerat beatae dignissimos veniam animi numquam, quam incidunt deserunt odio ipsam explicabo id accusantium quasi quibusdam! Nostrum </p>
-    <hr>
-    <h2>Education</h2>
-    <ul>
-        <li>Intermadiate in Computer Science</li>
-        <li>Bs in Computer science</li>
-    </ul>
-    <hr>
-    <h2>Experience</h2>
-    <ul>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, reprehenderit?</li>
-        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, nihil.</li>
-        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, eos!</li>
-    </ul>
-    <hr>
-    <h2>Skills</h2>
-    <ul>
-        <li>Mern tack developer</li>
-        <li>Full stack web developer</li>
-        <li>Ai Chatbot developer</li>
-    </ul>
-    <hr>
-    <h2>Contacts</h2>
-    <ul>
-       <li> Well.ad786@gmail.com</li>
-       <li> +92 03281926892</li>
-    </ul>
 
+    <!-- Header & Navigation -->
+    <header class="header">
+        <a href="#" class="logo">Ali Afzal.</a>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hi, I'm Ali Afzal</h1>
+            <h3>Frontend Developer</h3>
+            <p>A passionate and detail-oriented fresher dedicated to building elegant and functional websites. I'm excited to bring my skills and enthusiasm to a professional team and create amazing user experiences on the web.</p>
+            <div class="btn-box">
+                <a href="#projects">My Projects</a>
+                <a href="#contact">Let's Talk</a>
+            </div>
+        </div>
+
+        <div class="home-sci">
+            <a href="https://www.linkedin.com/in/ali-afzal-EXAMPLE" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+            <a href="https://github.com/aliafzalEXAMPLE" target="_blank"><i class='bx bxl-github' ></i></a>
+            <a href="mailto:ali.afzal@email.com"><i class='bx bx-envelope' ></i></a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="heading">About <span>Me</span></h2>
+
+        <div class="about-content">
+            <h3>Frontend Developer!</h3>
+            <p>Hello! My name is Ali, and I'm a recent graduate with a strong foundation in web development. My journey began when I first discovered I could bring designs to life with code, and I've been hooked ever since. I am constantly experimenting with new technologies and working on personal projects to sharpen my skills.</p>
+            <p>I am proficient in <strong>HTML, CSS, and JavaScript</strong>, and I'm currently expanding my knowledge in modern libraries like <strong>React.js</strong>. I believe in writing clean, efficient, and maintainable code. When I'm not coding, you can find me reading tech blogs, solving problems on platforms like LeetCode, or exploring new design trends.</p>
+            <p>I am actively seeking an opportunity where I can contribute, learn, and grow as a professional developer.</p>
+
+            <div class="skills">
+                <h3>My Skills</h3>
+                <div class="skill-container">
+                    <div class="skill">HTML5</div>
+                    <div class="skill">CSS3</div>
+                    <div class="skill">JavaScript</div>
+                    <div class="skill">Bootstrap</div>
+                    <div class="skill">Git & GitHub</div>
+                    <div class="skill">Responsive Design</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2 class="heading">My <span>Projects</span></h2>
+
+        <div class="projects-container">
+
+            <!-- Project 1 -->
+            <div class="project-box">
+                <div class="project-info">
+                    <h4>NovaTech E-Commerce Page</h4>
+                    <p>A fully responsive product page for a fictional electronics store. Features a dynamic image gallery, add-to-cart functionality, and a responsive layout.</p>
+                    <div class="tech-stack">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/aliafzalEXAMPLE/NovaTech-Store" target="_blank">Code <i class='bx bx-code-curly'></i></a>
+                        <a href="https://aliafzal-novatech.netlify.app/" target="_blank">Live Demo <i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-box">
+                <div class="project-info">
+                    <h4>QuickWeather App</h4>
+                    <p>A clean weather application that fetches real-time data from a public API. Users can search for any city to see current weather conditions and a 5-day forecast.</p>
+                    <div class="tech-stack">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>REST API</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/aliafzalEXAMPLE/QuickWeather-App" target="_blank">Code <i class='bx bx-code-curly'></i></a>
+                        <a href="https://aliafzal-quickweather.netlify.app/" target="_blank">Live Demo <i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-box">
+                <div class="project-info">
+                    <h4>TaskMaster To-Do List</h4>
+                    <p>A classic to-do list application with a modern twist. It allows users to add, edit, delete, and mark tasks as complete. Data is saved in the browser's local storage.</p>
+                    <div class="tech-stack">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/aliafzalEXAMPLE/TaskMaster-Todo" target="_blank">Code <i class='bx bx-code-curly'></i></a>
+                        <a href="https://aliafzal-taskmaster.netlify.app/" target="_blank">Live Demo <i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me!</span></h2>
+
+        <form action="#" id="contact-form">
+            <div class="input-box">
+                <input type="text" id="fullName" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+            </div>
+            <div class="input-box">
+                <input type="tel" id="phone" placeholder="Mobile Number">
+                <input type="text" id="subject" placeholder="Email Subject">
+            </div>
+            <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+            <p><i class='bx bx-envelope'></i> ali.afzal@email.com</p>
+            <p><i class='bx bx-phone'></i> +92 300 1234567</p>
+            <p><i class='bx bx-map'></i> Lahore, Pakistan</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 by Ali Afzal | All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
